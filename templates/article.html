@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>{{ title }}</title>
+</head>
+<body>
+   <div class="m-20 text-center text-3xl font-bold">{{ title.upper() }}</div>
+   <div class="text-center mx-96">
+    {% for i in range(0,5) %}
+        <div class="mb-8 h-auto grid grid-cols-5 rounded-md shadow-xl">
+            <div class="col-span-2 h-auto">
+                <img  class="rounded-l-md w-auto h-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png" alt="">  
+            </div>
+            <div class="col-span-3 h-auto bg-gray-200 text-left pl-4 rounded-r-md">
+                <div class="text-xl font-semibold mt-2">Peter Jackson’s 6-hour Beatles documentary confirmed for Disney+ this November</div>
+                <div class="mt-3">iujldv nikujkrgtns hbcks nwlkjerndc ;kjqme,wfn vdckxj neqfvd;kjc ihevn d;ikwrjgdsfv nuigndv clkjb  vlcijkbnltrkgjsf kxvcnlijq5ktegndv cikohlkj4wentsg diucjkbeq 4ltgiuldvj ljq jlnfkdv mcojletnrdsg </div>
+                <div class="mt-3 text-lg font-bold">Link of article - <a class="font-normal text-blue-800" href="https://google.com">https://google.com</a>  </div>
+            </div>
+        </div>
+       <!-- <div class="h-44 bg-gray-200 rounded-md shadow-xl">
+           <div class="float-left bg-white">
+               <img  class="rounded-l-md w-80 h-44" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png" alt=""> 
+            </div>
+            <div style="width: 440px" class="h-44 float-right text-left">
+                <div class="text-xl font-semibold mt-2">iehgujlvdvwoit;nsvd c kitgnrsfv cjkjefvnd c uiegjvd mc</div>
+                <div class="mt-3">iujldv nikujkrgtns vlcijkbnltrkgjsf kxvcnlijq5ktegndv cikohlkj4wentsg diucjkbeq 4ltgiuldvj ljq jlnfkdv mcojletnrdsg </div>
+                <div class="mt-3">Link of article - <a href="https://google.com">https://google.com</a>  </div>
+            </div>
+       </div> -->
+       {% endfor %}
+   </div>
+</body>
+</html>
