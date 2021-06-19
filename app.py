@@ -8,10 +8,15 @@ import os
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
+import sys
 from nltk.corpus import stopwords
+import logging
 API_KEY = os.getenv("API_KEY")
 
 app = Flask(__name__)
+
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 def clean_text(text):
       # Lowercase and remove \r & \n
