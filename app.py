@@ -54,10 +54,10 @@ def home():
     #   "source": "bbc-news",
     #   "sortBy": "top",
     # "sources" : "bbc-news,abc-news,aftenposten,ansa,ars-technica,associated-press",
-    # "language": "en",
+    "language": "en",
       "apiKey": API_KEY,
-      "country":"in"
-    # "q" :"stock exchange"
+    #   "country":"in"
+    # "q" :"say"
     }
     main_url = "https://newsapi.org/v2/top-headlines"
     # url = "https://bing-news-search1.p.rapidapi.com/news"
