@@ -55,53 +55,54 @@ all_articles = []
 
 @app.route('/')
 def home():
-    query_params = {
-    #   "source": "bbc-news",
-    #   "sortBy": "top",
-    # "sources" : "bbc-news,abc-news,aftenposten,ansa,ars-technica,associated-press",
-    "language": "en",
-      "apiKey": API_KEY,
-    #   "country":"in"
-    # "q" :"say"
-    }
-    main_url = "https://newsapi.org/v2/top-headlines"
-    # url = "https://bing-news-search1.p.rapidapi.com/news"
+    # query_params = {
+    # #   "source": "bbc-news",
+    # #   "sortBy": "top",
+    # # "sources" : "bbc-news,abc-news,aftenposten,ansa,ars-technica,associated-press",
+    # "language": "en",
+    #   "apiKey": API_KEY,
+    # #   "country":"in"
+    # # "q" :"say"
+    # }
+    # main_url = "https://newsapi.org/v2/top-headlines"
+    # # url = "https://bing-news-search1.p.rapidapi.com/news"
 
-    # querystring = {"textFormat":"Raw","safeSearch":"Off"}
+    # # querystring = {"textFormat":"Raw","safeSearch":"Off"}
 
-    # headers = {
-    #     'x-bingapis-sdk': "true",
-    #     'x-rapidapi-key': "a44c138188msh26db5a879ce4a96p1198c1jsn239b6a0ac379",
-    #     'x-rapidapi-host': "bing-news-search1.p.rapidapi.com"
-    #     }
+    # # headers = {
+    # #     'x-bingapis-sdk': "true",
+    # #     'x-rapidapi-key': "a44c138188msh26db5a879ce4a96p1198c1jsn239b6a0ac379",
+    # #     'x-rapidapi-host': "bing-news-search1.p.rapidapi.com"
+    # #     }
 
-    # response = requests.request("GET", url, headers=headers, params=querystring)
-    # print(len(response.json()['value']))
-    # print(response.text.json())
-    res = requests.get(main_url, params=query_params)
-    articles_requested = res.json()
-    print(articles_requested)
-    articles_data = articles_requested['articles']
-    print(articles_data)
-    articles = []
-    for i in range(0,len(articles_requested['articles'])):
-        if(articles_requested['articles'][i]['content'] != None):
-            articles.append(articles_requested['articles'][i]['content'])
-    articles_df = pd.DataFrame(articles,columns = ['STORY'])
-    articles_df['story_parsed'] = articles_df['STORY'].apply(clean_text)
-    articles_trained = tfidf.fit_transform(articles_df['story_parsed']).toarray()
-    filename = 'new_article_classification.pkl'
-    clf = pickle.load(open(filename, 'rb'))
-    articles_predicted = clf.predict(articles_trained)
+    # # response = requests.request("GET", url, headers=headers, params=querystring)
+    # # print(len(response.json()['value']))
+    # # print(response.text.json())
+    # res = requests.get(main_url, params=query_params)
+    # articles_requested = res.json()
+    # print(articles_requested)
+    # articles_data = articles_requested['articles']
+    # print(articles_data)
+    # articles = []
+    # for i in range(0,len(articles_requested['articles'])):
+    #     if(articles_requested['articles'][i]['content'] != None):
+    #         articles.append(articles_requested['articles'][i]['content'])
+    # articles_df = pd.DataFrame(articles,columns = ['STORY'])
+    # articles_df['story_parsed'] = articles_df['STORY'].apply(clean_text)
+    # articles_trained = tfidf.fit_transform(articles_df['story_parsed']).toarray()
+    # filename = 'new_article_classification.pkl'
+    # clf = pickle.load(open(filename, 'rb'))
+    # articles_predicted = clf.predict(articles_trained)
     
-    for i in range(0,len(articles_predicted)):
-        data = {}
-        data['article_type'] = articles_predicted[i]
-        data['title'] = articles_data[i]['title']
-        data['description'] = articles_data[i]['description']
-        data['image'] = articles_data[i]['urlToImage']
-        all_articles.append(data)
-    print(all_articles)
+    # for i in range(0,len(articles_predicted)):
+    #     data = {}
+    #     data['article_type'] = articles_predicted[i]
+    #     data['title'] = articles_data[i]['title']
+    #     data['description'] = articles_data[i]['description']
+    #     data['image'] = articles_data[i]['urlToImage']
+    #     all_articles.append(data)
+    # print(all_articles)
+    articles=[]
     return render_template('base.html',articles=articles)
 
 
