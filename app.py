@@ -110,6 +110,7 @@ def home():
         data['article_type'] = articles_predicted[i]
         data['title'] = articles_data[i]['title']
         data['description'] = articles_data[i]['description']
+        data['link'] = articles_data[i]['link']
         # data['image'] = articles_data[i]['urlToImage']
         all_articles.append(data)
     print(all_articles)
