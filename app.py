@@ -8,6 +8,7 @@ import os
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
+nltk.download('stopwords')
 import sys
 from nltk.corpus import stopwords
 import logging
