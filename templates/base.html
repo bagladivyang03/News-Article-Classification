@@ -1,42 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <title>News Article Classification</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1 class="text-center m-8 text-4xl font-bold">CURATED FEEDS</h1>
-        <div class="grid grid-cols-2 gap-6 m-6">
-            <a href="{{url_for('article',varible_name='entertainment')}}" class="cursor-pointer">
-                <div class="rounded-md shadow-xl text-xl xl:text-6xl text-white text-bold pt-20 text-center col-span-2 xl:col-span-1 h-64  bg-gradient-to-r from-red-500  to-yellow-400">
-                      Entertainment
-                </div>
-            </a>
-            <a href="{{url_for('article',varible_name='politics')}}" class="cursor-pointer">
-                <div class="rounded-md shadow-xl text-xl xl:text-6xl text-white text-bold pt-20 text-center col-span-2 xl:col-span-1 h-64 bg-gradient-to-r from-blue-800  to-blue-400">
-                      Politics
-                </div>
-            </a>
-            <a href="{{url_for('article',varible_name='technology')}}" class="cursor-pointer">
-                <div class="rounded-md shadow-xl text-xl xl:text-6xl text-white text-bold pt-20 text-center col-span-2 xl:col-span-1 h-64 bg-gradient-to-r from-purple-800  to-pink-400">
-                     Technology
-                </div>
-            </a>
-            <a  href="{{url_for('article',varible_name='business')}}" class="cursor-pointer">
-                <div class="rounded-md shadow-xl text-xl xl:text-6xl text-white text-bold pt-20 text-center col-span-2 xl:col-span-1 h-64 bg-gradient-to-r from-green-800  to-green-400">
-                    Business
-                </div>
-            </a>
-        </div>
-        <!-- <div class="text-left ml-4">
-            {%for i in articles%}
-                <li>{{i}}</li>
-            {%endfor%}
-        </div> -->
+      <h1 class="text-center m-8 text-4xl font-bold">WELCOME TO YOUR OWN NEWS GUIDE</h1>
+      <div class="grid grid-cols-2 gap-6 m-6">
+        <a
+          href="{{url_for('article',varible_name='entertainment')}}"
+          class="cursor-pointer"
+        >
+          <div
+            class="
+              rounded-md
+              shadow-xl
+              text-xl
+              xl:text-6xl
+              text-white text-bold
+              pt-20
+              text-center
+              col-span-2
+              xl:col-span-1
+              h-64
+              bg-gradient-to-r
+              from-red-500
+              to-yellow-400
+            "
+          >
+            Entertainment
+          </div>
+        </a>
+        <a
+          href="{{url_for('article',varible_name='politics')}}"
+          class="cursor-pointer"
+        >
+          <div
+            class="
+              rounded-md
+              shadow-xl
+              text-xl
+              xl:text-6xl
+              text-white text-bold
+              pt-20
+              text-center
+              col-span-2
+              xl:col-span-1
+              h-64
+              bg-gradient-to-r
+              from-blue-800
+              to-blue-400
+            "
+          >
+            Politics
+          </div>
+        </a>
+        <a
+          href="{{url_for('article',varible_name='technology')}}"
+          class="cursor-pointer"
+        >
+          <div
+            class="
+              rounded-md
+              shadow-xl
+              text-xl
+              xl:text-6xl
+              text-white text-bold
+              pt-20
+              text-center
+              col-span-2
+              xl:col-span-1
+              h-64
+              bg-gradient-to-r
+              from-purple-800
+              to-pink-400
+            "
+          >
+            Technology
+          </div>
+        </a>
+        <a
+          href="{{url_for('article',varible_name='business')}}"
+          class="cursor-pointer"
+        >
+          <div
+            class="
+              rounded-md
+              shadow-xl
+              text-xl
+              xl:text-6xl
+              text-white text-bold
+              pt-20
+              text-center
+              col-span-2
+              xl:col-span-1
+              h-64
+              bg-gradient-to-r
+              from-green-800
+              to-green-400
+            "
+          >
+            Business
+          </div>
+        </a>
+      </div>
     </div>
-</body>
+  </body>
 </html>
