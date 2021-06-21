@@ -14,7 +14,7 @@ from nltk.corpus import stopwords
 import logging
 import json
 API_KEY = os.getenv("API_KEY")
-
+GOOGLE_NEWS_API_KEY = os.getenv("GOOGLE_NEWS_API_KEY")
 app = Flask(__name__)
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
@@ -82,7 +82,7 @@ def home():
 
     url = "https://google-search3.p.rapidapi.com/api/v1/crawl/q=government+movies+technology+business&num=500"
     headers = {
-        'x-rapidapi-key': "a44c138188msh26db5a879ce4a96p1198c1jsn239b6a0ac379",
+        'x-rapidapi-key': GOOGLE_NEWS_API_KEY,
         'x-rapidapi-host': "google-search3.p.rapidapi.com"
         }
 
