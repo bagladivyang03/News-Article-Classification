@@ -1,6 +1,9 @@
 # News-Article-Classification
 This web application is developed to help classify news articles into 4 categories - a] Entertainment  b] Politics  c] Technology  d] Business.
-The application uses machine learning models to classify the articles into their respective categories. This application deals with text data(news articles) hence the preprocessing of data is slightly different than usual.
+The application uses NLP techniques and machine learning models to classify the articles into their respective categories. This application deals with text data(news articles) hence the preprocessing of data is slightly different than usual.  
+You can check out the app [here](https://news-article-classification.herokuapp.com/)
+
+
 
 ## Steps followed:
 
