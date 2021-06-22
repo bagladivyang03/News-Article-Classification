@@ -49,37 +49,11 @@ tfidf = TfidfVectorizer(encoding='utf-8',
                         norm = norm,
                         sublinear_tf = 'true')
 
-entertainment_articles =[]
-politics_articles = []
-business_articles = []
-technology_articles = []
+articles =[]
 all_articles = []
 
 @app.route('/')
 def home():
-    # query_params = {
-    # #   "source": "bbc-news",
-    # #   "sortBy": "top",
-    # # "sources" : "bbc-news,abc-news,aftenposten,ansa,ars-technica,associated-press",
-    # "language": "en",
-    #   "apiKey": API_KEY,
-    # #   "country":"in"
-    # # "q" :"say"
-    # }
-    # main_url = "https://newsapi.org/v2/top-headlines"
-    # url = "https://bing-news-search1.p.rapidapi.com/news"
-
-    # querystring = {"textFormat":"Raw","safeSearch":"Off"}
-
-    # headers = {
-    #     'x-bingapis-sdk': "true",
-    #     'x-rapidapi-key': "a44c138188msh26db5a879ce4a96p1198c1jsn239b6a0ac379",
-    #     'x-rapidapi-host': "bing-news-search1.p.rapidapi.com"
-    #     }
-
-    # response = requests.request("GET", url, headers=headers, params=querystring)
-    # print(len(response.json()['value']))
-
     url = "https://google-search3.p.rapidapi.com/api/v1/crawl/q=government+movies+technology+business&num=500"
     headers = {
         'x-rapidapi-key': GOOGLE_NEWS_API_KEY,
@@ -87,9 +61,7 @@ def home():
         }
 
     response = requests.request("GET", url, headers=headers)
-
     print(response.json()['results'])
-    # res = requests.get(main_url, params=query_params)
     articles_requested = response.json()['results']
     print(articles_requested)
     articles_data = response.json()['results']
@@ -111,24 +83,22 @@ def home():
         data['title'] = articles_data[i]['title']
         data['description'] = articles_data[i]['description']
         data['link'] = articles_data[i]['link']
-        # data['image'] = articles_data[i]['urlToImage']
         all_articles.append(data)
     print(all_articles)
-    # articles=[]
     return render_template('base.html',articles=articles)
 
 
 @app.route('/newsarticle/<varible_name>/')
 def article(varible_name):
     if(varible_name == 'entertainment'):
-        entertainment_articles= filter(lambda x: x['article_type']==2,all_articles)
+        articles= filter(lambda x: x['article_type']==2,all_articles)
     if(varible_name == 'politics'):
-        entertainment_articles= filter(lambda x: x['article_type']==0,all_articles)
+        articles= filter(lambda x: x['article_type']==0,all_articles)
     if(varible_name == 'technology'):
-        entertainment_articles= filter(lambda x: x['article_type']==1,all_articles)
+        articles= filter(lambda x: x['article_type']==1,all_articles)
     if(varible_name == 'business'):
-        entertainment_articles= filter(lambda x: x['article_type']==3,all_articles)
-    return render_template('article.html',title=varible_name,articles=entertainment_articles)
+        articles= filter(lambda x: x['article_type']==3,all_articles)
+    return render_template('article.html',title=varible_name,articles=articles)
 
 
 if __name__ == '__main__':
