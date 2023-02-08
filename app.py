@@ -12,6 +12,7 @@ import sys
 from nltk.corpus import stopwords
 import logging
 import json
+
 API_KEY = os.getenv("API_KEY")
 
 app = Flask(__name__)
