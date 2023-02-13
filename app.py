@@ -13,6 +13,7 @@ import sys
 from nltk.corpus import stopwords
 import logging
 import json
+
 API_KEY = os.getenv("API_KEY")
 GOOGLE_NEWS_API_KEY = os.getenv("GOOGLE_NEWS_API_KEY")
 app = Flask(__name__)
